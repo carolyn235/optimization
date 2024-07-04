@@ -43,7 +43,7 @@ RUN curl -fsSL https://install.julialang.org | sh -s -- \
         --default-channel=lts \
         --path=$HOME/julia \
     && sudo ln -s $HOME/julia/bin/julia /usr/local/bin/julia \
-    && julia -e 'using Pkg; Pkg.resolve(); Pkg.instantiate()'
+    && PYTHON=$HOME/pyenv/bin/python julia -e 'using Pkg; Pkg.resolve(); Pkg.instantiate()'
 
 ################################################################################
 # Gurobi
